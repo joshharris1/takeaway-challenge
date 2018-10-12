@@ -1,6 +1,7 @@
 class Takeaway
     
   attr_reader :menu
+  attr_reader :order
     
   def initialize
         
@@ -12,6 +13,7 @@ class Takeaway
       "spring rolls" => 2,
       "crispy beef" => 3
       }
+      @order = []
   end
     
   def print_menu
@@ -19,5 +21,13 @@ class Takeaway
     # menu.each do |item, price|
       # puts "#{item}, £#{price}"
     # end
+  end
+  
+  def take_order(item, quantity)
+    if @menu.include?(item)
+      @order << item
+    else
+      puts "Item not found"
+    end
   end
 end
